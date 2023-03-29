@@ -93,6 +93,16 @@ public class build_tree {
                 }
             }
         }
+
+        public int height(Node root) {
+            if (root == null) {
+                return 0;
+            }
+            int lh = height(root.left);
+            int rh = height(root.right);
+            int height = Math.max(lh, rh) + 1;
+            return height;
+        }
     }
 
     public static void main(String[] args) {
@@ -101,7 +111,8 @@ public class build_tree {
         Node root = tree.buildTree(nodes);
         // System.out.println(root.data);
 
-        tree.levelOrder(root);
+        // tree.levelOrder(root);
+        System.out.println(height(root));
     }
 
 }
