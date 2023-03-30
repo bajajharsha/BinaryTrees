@@ -103,6 +103,28 @@ public class build_tree {
             int height = Math.max(lh, rh) + 1;
             return height;
         }
+        
+        // count of nodes
+        public int countNodes(Node root){
+            if (root == null){
+                return 0;
+            }
+            int lcount = countNodes(root.left); 
+            int rcount = countNodes(root.right); 
+            int treeCount = lcount + rcount + 1;
+            return treeCount; 
+        }
+
+        // sum of nodes
+        public int sum(Node root){
+            if (root == null){
+                return 0;
+            }
+            int lsum = sum(root.left);
+            int rsum = sum(root.right);
+            int sum = lsum + rsum + root.data;
+            return sum;
+        }
     }
 
     public static void main(String[] args) {
